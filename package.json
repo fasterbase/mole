@@ -1,0 +1,29 @@
+{
+  "name": "mole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:run": "typeorm migration:run -d dist/orm/default-connection.js",
+    "migration:generate": "typeorm migration:generate src/orm/migrations -d dist/orm/default-connection.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aedes": "^0.48.1",
+    "amqplib": "^0.10.3",
+    "ioredis": "^5.2.4",
+    "kafkajs": "^2.2.3",
+    "mqtt": "^4.3.7",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.28.0",
+    "typeorm": "^0.3.11"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.1"
+  }
+}

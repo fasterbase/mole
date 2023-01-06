@@ -1,0 +1,26 @@
+{
+  "kafka":{
+    "host":"localhost:9092",
+    "topics":{
+      "deviceData":"device-raw-data",
+      "log":"log"
+    },
+    "fetchRequestorTopic":"fetch-data-DEVICEID",
+    "groupId":"wait-for-data",
+    "clientId":"device"
+  },
+  "mqtt":{
+    "port":"8883",
+    "deviceId":"USERID"
+  },
+  "pullUpdateInterval":10000,
+  "pulls":[
+    {"key":"keyTest","segmentId":1,"interval":60}
+  ],
+  "rabbit":{
+    "password":"eUMENsuseU",
+    "username":"mole_user",
+    "userValueQueue":"user-values"
+  }
+  
+}
