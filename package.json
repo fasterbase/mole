@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "docker:build": "docker build -t mole_test . && docker tag cheetah farazfaraji/mole_test:latest",
+    "docker:run": "docker run -p 1100:3000 farazfaraji/mole_test:latest",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration:run": "typeorm migration:run -d dist/orm/default-connection.js",
     "migration:generate": "typeorm migration:generate src/orm/migrations -d dist/orm/default-connection.js"

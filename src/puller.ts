@@ -37,7 +37,7 @@ const initialRabbitMQ = async () => {
   //channel.sendToQueue("user-values", Buffer.from("message"));
 };
 
-const run = async () => {git add README.md
+const run = async () => {
   await connect();
   const now = new Date();
 
