@@ -36,7 +36,7 @@ const run = async (topic: keyof typeof config.kafka.topics) => {
             flow(JSON.parse(message.value.toString()));
             break;
           }
-          case "log": {
+          case "history": {
             const data: DeviceData = JSON.parse(message.value.toString());
             console.log("Write to dB", data);
             const deviceLog = deviceRepository.create({

@@ -56,7 +56,7 @@ const initializeMQTT = async () => {
         mqttClient.on("message", function (topic, message) {
           try {
             console.log("MQTT Data Received: " + message.toString());
-            pushToKafka({ topic: "log", data: message.toString() });
+            pushToKafka({ topic: "history", data: message.toString() });
             //pushToKafka({ topic: "deviceData", data: message.toString() });
             //flow.run(JSON.parse(message.toString()));
           } catch (e) {

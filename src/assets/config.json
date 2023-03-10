@@ -3,7 +3,7 @@
     "host":"localhost:9092",
     "topics":{
       "deviceData":"device-raw-data",
-      "log":"log"
+      "history":"history"
     },
     "fetchRequestorTopic":"fetch-data-DEVICEID",
     "groupId":"wait-for-data",
