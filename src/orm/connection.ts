@@ -8,10 +8,11 @@ const PostgresDataSource = new DataSource(config);
 export let deviceRepository: Repository<DeviceData> | null = null;
 
 export const connect = async () => {
-  await PostgresDataSource.initialize();
+  const dataSource = await PostgresDataSource.initialize();
   try {
     deviceRepository = PostgresDataSource.getRepository(DeviceData);
     console.log("Data Source has been initialized!");
+    return dataSource;
   } catch (err: any) {
     console.error("Error during Data Source initialization", err);
   }
