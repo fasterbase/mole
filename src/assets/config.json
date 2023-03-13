@@ -1,4 +1,7 @@
 {
+  "user": {
+    "companyId":"STATIC_CID"
+  },
   "kafka":{
     "host":"localhost:9092",
     "topics":{
@@ -22,5 +25,4 @@
     "username":"mole_user",
     "userValueQueue":"user-values"
   }
-  
 }
