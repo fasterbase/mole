@@ -1,0 +1,10 @@
+{
+	"mqtt": {
+		"host": "localhost",
+		"port": "1883"
+	},
+	"topic": {
+		"deviceId": "USERID",
+		"suffix": "-output"
+	}
+}

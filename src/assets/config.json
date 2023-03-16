@@ -10,7 +10,7 @@
     "clientId":"device"
   },
   "mqtt":{
-    "port":"8883",
+    "port":"1883",
     "deviceId":"USERID"
   },
   "pullUpdateInterval":10000,

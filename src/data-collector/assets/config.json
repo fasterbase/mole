@@ -1,0 +1,20 @@
+{
+	"mqtt": {
+		"host": "localhost",
+		"port": "1883",
+		"topic": {
+			"deviceId": "USERID",
+			"suffix": "-output"
+		}
+	},
+	"kafka": {
+		"host": "localhost:9092",
+		"port": "9092",
+		"clientId":"device",
+		"topics":{
+			"deviceData":"device-raw-data",
+			"history":"history"
+		  }
+	}
+
+}

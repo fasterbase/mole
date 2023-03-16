@@ -1,0 +1,13 @@
+{
+	"kafka": {
+		"host": "localhost:9092",
+		"port": "9092",
+		"clientId":"device",
+		"topics":{
+			"deviceData":"device-raw-data",
+			"history":"history"
+		  },
+		  "groupId":"wait-for-data"
+	}
+
+}
