@@ -1,5 +1,6 @@
 import { DataSourceOptions } from "typeorm";
 import { DeviceData } from "./entities/device.entity";
+import { TableData } from "./entities/table.entity";
 
 export const config: DataSourceOptions = {
   type: "postgres",
@@ -11,6 +12,6 @@ export const config: DataSourceOptions = {
   database: "postgres",
   synchronize: false,
   logging: false,
-  entities: [DeviceData], //["dist/orm/entities/**/*{.js,.ts}"],
+  entities: [DeviceData, TableData ], //["dist/orm/entities/**/*{.js,.ts}"],
   migrations: ["dist/orm/migrations/**/*{.js,.ts}"],
 };
