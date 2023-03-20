@@ -1,9 +1,9 @@
-import * as config from "./assets/config.json";
+import * as config from "../assets/config.json";
 import * as mqtt from "mqtt";
 import { IClientOptions } from "mqtt";
-import { KafkaProducer } from './kafka-producer';
+import { KafkaInstance } from './kafka-instance';
 
-let kafkaProducer: KafkaProducer | null = null;
+let kafkaProducer: KafkaInstance | null = null;
 
 const run = async () => {
 	await initializeKafkaProducer();
@@ -63,8 +63,8 @@ const initializeMQTT = async () => {
   };
 
 const initializeKafkaProducer = async () => {
-	kafkaProducer = new KafkaProducer();
-	await kafkaProducer.connect();
+	kafkaProducer = new KafkaInstance();
+	await kafkaProducer.connectProducer();
   };
 
 run().catch(console.error);

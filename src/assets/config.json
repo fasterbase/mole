@@ -10,8 +10,13 @@
     "clientId":"device"
   },
   "mqtt":{
+    "host": "localhost",
     "port":"1883",
-    "deviceId":"USERID"
+    "deviceId":"USERID",
+    "topic": {
+			"deviceId": "USERID",
+			"suffix": "-output"
+		}
   },
   "pullUpdateInterval":10000,
   "pulls":[

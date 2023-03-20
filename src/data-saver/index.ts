@@ -1,27 +1,24 @@
 import { Kafka } from "kafkajs";
-import * as config from "./assets/config.json";
+import * as config from "../assets/config.json";
 import { deviceRepository, connect } from "../orm/connection";
 import { DeviceData } from "../orm/entities/device.entity";
+import { KafkaInstance } from "../data-collector/kafka-instance";
+
+let kafkaConsumer: KafkaInstance | null = null
 
 const run = async (topic: keyof typeof config.kafka.topics) => {
+  kafkaConsumer = new KafkaInstance();
+	await kafkaConsumer.connectConsumer();
+
   if (!topic) {
     throw new Error("Topic is empty");
   }
   await connect();
 
-  const kafka = new Kafka({
-    clientId: config.kafka.clientId,
-    brokers: [config.kafka.host],
-  });
 
-  const consumer = kafka.consumer({ groupId: config.kafka.groupId });
+  await kafkaConsumer.subscribe(topic);
 
-  await consumer.subscribe({
-    topic,
-    fromBeginning: true,
-  });
-
-  await consumer.run({
+  await kafkaConsumer.consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       console.log("topic", topic, "partition", partition, "message", message);
       if (message.value) {
