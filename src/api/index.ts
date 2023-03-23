@@ -16,5 +16,5 @@ app.use("/api/table", tablesController);
 
 app.use("/api/column", columnController);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

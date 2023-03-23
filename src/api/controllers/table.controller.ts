@@ -2,13 +2,14 @@ import express from "express";
 import { Request, Response } from "express";
 import { TableData } from "../../orm/entities/table.entity";
 import { tableRepository, connect } from "../../orm/connection";
-
+import tableDataMock from "../mock/table-data.mock"
 const router = express.Router();
 
 /**
  * This endpoint is supposed to return table data value to cheetah.
  */
 router.get("/:tableId", async (req: Request, res: Response): Promise<void> => {
+    // res.status(200).json(tableDataMock)
     try {
         const { tableId } = req.params;
 
